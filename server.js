@@ -2,7 +2,7 @@
 // -----------------------------------------------------
 var express         = require('express');
 var mongoose        = require('mongoose');
-var port            = process.env.PORT || 3000;
+var port            = process.env.PORT || 8080;
 var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
@@ -11,6 +11,9 @@ var Post            = require('./api/models/postModel');
 
 // Express Configuration
 // -----------------------------------------------------
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 // Sets the connection to MongoDB
 mongoose.connect("mongodb://localhost/mean-panamerican");
 
@@ -26,6 +29,14 @@ app.use(methodOverride());
 
 // Routes
 // ------------------------------------------------------
+
+// set the home page route
+app.get('/', function(req, res) {
+
+    // ejs render automatically looks in the views folder
+    res.render('index');
+});
+
 var routes = require('./api/routes/postRoutes.js');
 routes(app);
 

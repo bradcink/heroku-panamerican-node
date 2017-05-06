@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<!-- Declares mean_panamerican as the starting Angular module -->
+<html class="no-js" ng-app="mean_panamerican">
+<head>
+    <meta charset="utf-8">
+    <title>ramblers | velma and the cinks</title>
+    <meta name="description" content="Ramble On">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <!-- Holder JS -->
+    <script src="../bower_components/holderjs/holder.js"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSD-f5fmNjaxggDL0N3M4FwThMdNZX8tI"></script>
+    <!-- Modernizr -->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <!-- Angular Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/addCtrl.js"></script>
+    <script src="js/queryCtrl.js"></script>
+    <script src="js/gservice.js"></script>
+    <!-- Panamerican App Scripts / CSS -->
+    <link rel="stylesheet" href="assets/css/map-icons.css" type="text/css"/>
+    <script type="text/javascript" src="assets/js/maps.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script type="text/javascript" src="assets/js/fontawesome-markers.min.js"></script>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+	<body class="is-loading-0 is-loading-1 is-loading-2" ng-controller="addCtrl">
+
+		<!-- Main -->
+			<div id="main">
+        
+				<!-- Header -->
+					<header id="header">
+						<h1>ramblers</h1>
+            <span class="image"><img class = "velma" src="images/Velma - Orange.png" style="width: 100px" /></span>
+						<p>velma and the cinks</p>
+						<ul class="icons">
+              <li active><a href="/#/search">Search</a></li>
+              <li disabled><a href="/#/add">Add</a></li>
+						</ul>
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+              <div ng-view></div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Brad Cink.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

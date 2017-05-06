@@ -15,7 +15,7 @@ var Post            = require('./api/models/postModel');
 app.set('view engine', 'ejs');
 
 // Sets the connection to MongoDB
-mongoose.connect("mongodb://localhost/mean-panamerican");
+//mongoose.connect("mongodb://localhost/mean-panamerican");
 
 // Logging and Parsing
 app.use(express.static(__dirname + '/public'));                 // sets the static files location to public

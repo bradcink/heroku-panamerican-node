@@ -2,13 +2,13 @@
 // -----------------------------------------------------
 var express         = require('express');
 var mongoose        = require('mongoose');
-var port            = process.env.PORT || 8080;
+// var port            = process.env.PORT || 8080;
 var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var app             = express();
 var Post            = require('./api/models/postModel');
-export MONGOLAB_URI="mongodb://admin:password@ds127101.mlab.com:27101/mean-panamerican";
+MONGOLAB_URI        = "mongodb://admin:password@ds127101.mlab.com:27101/mean-panamerican";
 
 // Express Configuration
 // -----------------------------------------------------
@@ -43,5 +43,5 @@ routes(app);
 
 // Listen
 // -------------------------------------------------------
-app.listen(port);
-console.log('App listening on port ' + port);
+// app.listen(port);
+// console.log('App listening on port ' + port);

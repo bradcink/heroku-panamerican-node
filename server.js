@@ -8,6 +8,7 @@ var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var app             = express();
 var Post            = require('./api/models/postModel');
+var mlabPanamerican = export MONGOLAB_URI="mongodb://admin:password@ds127101.mlab.com:27101/mean-panamerican";
 
 // Express Configuration
 // -----------------------------------------------------
@@ -15,7 +16,7 @@ var Post            = require('./api/models/postModel');
 app.set('view engine', 'ejs');
 
 // Sets the connection to MongoDB
-//mongoose.connect("mongodb://localhost/mean-panamerican");
+mongoose.connect(mlabPanamerican);
 
 // Logging and Parsing
 app.use(express.static(__dirname + '/public'));                 // sets the static files location to public

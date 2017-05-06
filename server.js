@@ -2,7 +2,7 @@
 // -----------------------------------------------------
 var express         = require('express');
 var mongoose        = require('mongoose');
-// var port            = process.env.PORT || 8080;
+var port            = process.env.PORT || 8080;
 var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
@@ -43,5 +43,5 @@ routes(app);
 
 // Listen
 // -------------------------------------------------------
-// app.listen(port);
-// console.log('App listening on port ' + port);
+app.listen(port);
+console.log('App listening on port ' + port);

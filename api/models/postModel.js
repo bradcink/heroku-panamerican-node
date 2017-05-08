@@ -3,7 +3,7 @@ var mongoose    = require('mongoose');
 var Schema      = mongoose.Schema;
 mongoose.set('debug', true);
 
-// Creates a Planning Schema. This will be the basis of how user data is stored in the db
+// Creates a Planning Schema. This will be the basis of how planning data is stored in the db
 var PlanningSchema = new Schema({
     city: {type: String},
     province: {type: String},

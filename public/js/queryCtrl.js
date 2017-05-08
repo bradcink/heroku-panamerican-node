@@ -1,6 +1,6 @@
 // Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var queryCtrl = angular.module('queryCtrl', ['geolocation', 'gservice']);
-queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice){
+queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, $location, geolocation, gservice){
 
   // Initializes Variables
   // ----------------------------------------------------------------------------
@@ -12,6 +12,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
   var queryBody = {};
   var editBody = {};
   var queryID = {};
+  var newActivityCounter = 0;
 
   // Set initial coordinates to the center of the US
   $scope.formData.latitude = 10.500;
@@ -25,6 +26,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
   $http.get('/distinct').then(function(response){
      var data = response.data;
      var select = document.getElementById("activities");
+     // Removes all child elements
+     select.innerHTML = '';
            for( var i = 0; i < data.length; i++ ){
                   var o = data[i];
                   var option = document.createElement("option");
@@ -34,7 +37,6 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
   }).catch(function(){});
 };
 
-// Call the functiuon
 getDistinctActivities();
 
 // Add a new activity when the queryForm button is clicked; Adds a new activity to the select node
@@ -45,11 +47,19 @@ getDistinctActivities();
     option.appendChild(document.createTextNode(newActivity));
     select.appendChild(option);
     option.style.color = "#76BEDB";
+    newActivityCounter = newActivityCounter + 1;
+    var activityLabel = document.getElementById("activities_label");
+    if (newActivityCounter < 2) {
+      activityLabel.innerHTML = ('Activities: ' + newActivityCounter + ' new activity');
+    }
+    else {
+      activityLabel.innerHTML = ('Activities: ' + newActivityCounter + ' new activities');
+    }
+    var newActivityInput = getElementById("")
   }
 
   // Get attributes based on mouse click. When a click event is detected....
   $rootScope.$on("clicked", function(){
-
       // Run the gservice functions associated with identifying attributes
       $scope.$apply(function(){
         var viewData = {
@@ -89,7 +99,9 @@ getDistinctActivities();
           })
   };
 
-  $scope.prepareToEdit = function() {
+  prepareToEdit = function() {
+        $('#deleteButton').before('<button type="submit" id = "saveButton" class="btn btn-success btn-block">Save</button>');
+        $('#editButton').remove();
         document.getElementById("latitude").removeAttribute('readonly');
         document.getElementById("longitude").removeAttribute('readonly');
         document.getElementById("city").removeAttribute('readonly');
@@ -103,11 +115,16 @@ getDistinctActivities();
         document.getElementById("activities").disabled=false;
         document.getElementById("activity_new").removeAttribute('readonly');
         document.getElementById("comments").removeAttribute('disabled');
-        document.getElementById("editButton").style.visibility = "hidden";
-        document.getElementById("saveButton").style.visibility = "visible";
   };
+  $( "#formButtons" ).on("click", "#editButton", function(){
+    prepareToEdit();
+  });
 
-  $scope.postEdit = function() {
+  $( "#formButtons" ).on("click", "#saveButton", function(){
+    postEdit();
+  });
+
+  postEdit = function() {
         // Assemble Query Body
         // Grabs all of the text box fields
         var editBody = {
@@ -132,8 +149,9 @@ getDistinctActivities();
         .catch(function(queryResults){
             console.log('Error ' + queryResults);
         })
-        document.getElementById("editButton").style.visibility = "visible";
-        document.getElementById("saveButton").style.visibility = "hidden";
+
+        $('#saveButton').remove();
+        $('#deleteButton').before('<button type="submit" id = "editButton" class="btn btn-warning btn-block">Edit</button>');
         document.getElementById("latitude").setAttribute('readonly');
         document.getElementById("longitude").setAttribute('readonly');
         document.getElementById("city").setAttribute('readonly');

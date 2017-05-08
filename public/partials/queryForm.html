@@ -53,7 +53,7 @@
                     <div class="input-group">
                       <input type="text" class="form-control" id="activity_new" placeholder="add activity" ng-model="formData.activity_new" readonly>
                       <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" ng-click="addActivity()">+</button>
+                        <button class="btn btn-info" type="button" style = "height: 38px;" ng-click="addActivity()">+</button>
                       </span>
                     </div><!-- /input-group -->
                 </div>
@@ -63,12 +63,7 @@
                 </div>
             </form>
         </div>
-        <form name ="editForm">
-            <button type="submit" id = "editButton" style="visibility: visible" class="btn btn-warning btn-block" ng-click="prepareToEdit()">Edit</button>
-            <button type="submit" id = "saveButton" style="visibility: hidden;" class="btn btn-success btn-block" ng-click="postEdit()">Save</button>
+        <form name ="editForm" id="formButtons">
+            <button type="submit" id = "editButton" style="visibility: visible" class="btn btn-warning btn-block">Edit</button>
             <button type="submit" id = "deleteButton" style="visibility: visible;" class="btn btn-danger btn-block" ng-click="deletePost()">Delete</button>
         </form>
-        <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
-        <div ng-show="queryCount>0" class="panel-footer">
-            <p class="text-center">Found {{queryCount}} results.</p>
-        </div>

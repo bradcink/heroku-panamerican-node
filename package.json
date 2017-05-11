@@ -1,5 +1,8 @@
 {
     "name": "mean_panamerican",
+    "version": "1.0.0",
+    "description": "A site to plan and track travels",
+    "author": "Brad Cink",
     "main": "server.js",
     "scripts": {
       "start": "node server.js"
@@ -11,6 +14,15 @@
         "morgan"     : "~1.2.2",
         "body-parser": "~1.5.2",
         "jsonwebtoken": "^5.0.2",
-        "method-override": "~2.1.2"
+        "method-override": "~2.1.2",
+        "passport" : "~0.1.17",
+        "passport-local" : "~0.1.6",
+        "passport-facebook" : "~1.0.2",
+        "passport-twitter" : "~1.0.2",
+        "passport-google-oauth" : "~0.1.5",
+        "connect-flash" : "~0.1.1",
+        "bcrypt-nodejs" : "latest",
+        "cookie-parser": "~1.0.0",
+        "express-session": "~1.0.0"
     }
 }

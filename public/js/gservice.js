@@ -97,7 +97,8 @@ var initialize = function(latitude, longitude) {
               minZoom: 3,
               maxZoom: 15
             },
-            center: myLatLng
+            center: myLatLng,
+            disableDefaultUI: true
         });
     }
 

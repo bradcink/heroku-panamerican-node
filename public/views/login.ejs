@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>ramblers | signup</title>
+		<title>ramblers | login</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
@@ -33,25 +33,25 @@
 						</header>
 
 						<hr />
-						<h2>Sign Up</h2>
-						<form method="post" action="/signup">
+						<h2>Sign In</h2>
+						<form method="post" action="/login" id="signInForm">
               <div class="field">
-								<input type="text" name="name" id="name" placeholder="Velma" />
+								<input type="text" name="firstname" id="firstname" placeholder="Velma" />
 							</div>
 							<div class="field">
-								<input type="text" name="email" id="email" placeholder="brad@thecinks.com" />
+								<input type="text" name="email" id="email" placeholder="velma@thecinks.com" />
 							</div>
 							<div class="field">
 								<input type="password" name="password" id="password" placeholder="password" />
 							</div>
 							<ul class="actions">
-								<li><button type="submit" class="button">Signup</button></li>
+								<a href="#" class="button" onclick="document.getElementById('signInForm').submit();">Login</a>
 							</ul>
 						</form>
 						<hr />
 						<footer>
 							<ul class="icons">
-								<li><a href="/login" class="fa-arrow-right">Login</a></li>
+								<li><a href="/signup" class="fa-arrow-up">Sign Up</a></li>
 								<li><a href="/" class="fa-home">Home</a></li>
 							</ul>
 						</footer>

@@ -278,7 +278,8 @@ var main = (function($) { var _ = {
 					.on('touchstart', function(event) {
 
 						// Bail on xsmall.
-							if (skel.breakpoint('xsmall').active)
+							if (skel.breakpoint('xsmall').active){
+							}
 								return;
 
 						// Record start position.

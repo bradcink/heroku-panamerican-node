@@ -22,6 +22,7 @@
     <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
     <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+
     <!-- Angular Scripts -->
     <script src="js/app.js"></script>
     <script src="js/addCtrl.js"></script>
@@ -30,6 +31,7 @@
     <!-- Panamerican App Scripts / CSS -->
     <link rel="stylesheet" href="assets/css/map-icons.css" type="text/css"/>
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-override.css" />
     <script type="text/javascript" src="assets/js/fontawesome-markers.min.js"></script>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -41,11 +43,18 @@
 						<h1>ramblers</h1>
             <span class="image"><img class = "velma" src="images/Velma - Orange.png" style="width: 100px" /></span>
 						<p>velma and the cinks</p>
-						<ul class="nav nav-tabs">
-              <li active><a href="/#/search">Search</a></li>
-              <li disabled><a href="/#/add">Add</a></li>
-              <li disabled><a href="/logout">Logout</a></li>
-						</ul>
+            <% if(user.local.name == "Guest"){ %>
+              <ul class="nav nav-tabs">
+                <li active><a href="/#/search">Search</a></li>
+                <li disabled><a href="/logout">Logout</a></li>
+              </ul>
+             <% } else{ %>
+               <ul class="nav nav-tabs">
+                 <li active><a href="/#/search">Search</a></li>
+                 <li disabled><a href="/#/add">Add</a></li>
+                 <li disabled><a href="/logout">Logout</a></li>
+               </ul>
+            <% } %>
 					</header>
 
 				<!-- Thumbnail -->

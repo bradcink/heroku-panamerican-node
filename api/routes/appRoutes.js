@@ -13,7 +13,7 @@ module.exports = function(app, passport) {
     .put(planningPosts.update_a_post)
     .delete(planningPosts.delete_a_post);
 
-  app.route('/query')
+  app.route('/search')
     .post(planningPosts.query_a_post);
 
   app.route('/distinct')
@@ -23,6 +23,12 @@ module.exports = function(app, passport) {
   //  .get(userRoutes.get_homepage);
 
   app.get('/', isLoggedIn, function(req, res) {
+        res.render('index.ejs', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
+
+  app.get('/#/search', isLoggedIn, function(req, res) {
         res.render('index.ejs', {
             user : req.user // get the user out of session and pass to template
         });

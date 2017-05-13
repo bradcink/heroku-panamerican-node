@@ -11,8 +11,21 @@
         var locations = [];
 
         // Selected Location (initialize to center of America)
-        var selectedLat = 39.50;
-        var selectedLong = -90.35;
+
+        if ($( window ).width() < '736'){
+          var selectedLat = 8.60;
+          var selectedLong = -83.00;
+          $('<div id="map" style="width:100%; height:200px;">').prependTo("#thumbnails");
+          var mapZoom = 2;
+          var minMapZoom = 2;
+        }
+        else {
+          var selectedLat = 39.50;
+          var selectedLong = -90.35;
+          var mapZoom = 3;
+          var minMapZoom = 3;
+        }
+
 
         // Handling Clicks and location selection
         googleMapService.clickLat  = 0;
@@ -87,14 +100,15 @@ var initialize = function(latitude, longitude) {
     // Uses the selected lat, long as starting point
     var myLatLng = {lat: selectedLat, lng: selectedLong};
 
+
     // If map has not been created already...
     if (!map){
 
         // Create a new map and place in the index.html page
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 3,
+            zoom: mapZoom,
             options: {
-              minZoom: 3,
+              minZoom: minMapZoom,
               maxZoom: 15
             },
             center: myLatLng,

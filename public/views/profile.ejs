@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>ramblers | login</title>
+		<title>ramblers | profile</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
@@ -20,10 +20,6 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- show any messages that come back with authentication -->
-		    <% if (message.length > 0) { %>
-		        <div class="alert alert-danger"><%= message %></div>
-		    <% } %>
-
 				<!-- Main -->
 					<section id="main">
 						<header id="header">
@@ -33,25 +29,17 @@
 						</header>
 
 						<hr />
-						<h2>Sign In</h2>
-						<form method="post" action="/login">
-              <div class="field">
-								<input type="text" name="firstname" id="firstname" placeholder="Velma" />
-							</div>
-							<div class="field">
-								<input type="text" name="email" id="email" placeholder="velma@thecinks.com" />
-							</div>
-							<div class="field">
-								<input type="password" name="password" id="password" placeholder="password" />
-							</div>
-							<ul class="actions">
-								<li><button type="submit" class="button">Login</button></li>
-							</ul>
-						</form>
+						<h2>Profile</h2>
+            <p>
+                <strong>id</strong>: <%= user._id %><br>
+                <strong>name</strong>: <%= user.local.name %><br>
+                <strong>email</strong>: <%= user.local.email %><br>
+                <strong>password</strong>: <%= user.local.password %>
+            </p>
 						<hr />
 						<footer>
 							<ul class="icons">
-								<li><a href="/signup" class="fa-arrow-up">Sign Up</a></li>
+								<li><a href="/login" class="fa-arrow-right">Login</a></li>
 								<li><a href="/" class="fa-home">Home</a></li>
 							</ul>
 						</footer>

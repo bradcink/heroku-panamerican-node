@@ -7,11 +7,11 @@ var app = angular.module('mean_panamerican', ['addCtrl', 'queryCtrl', 'geolocati
         // Join Team Control Panel
         $routeProvider.when('/add', {
             controller: 'addCtrl',
-            templateUrl: 'partials/addForm.html',
+            templateUrl: 'views/addForm.ejs',
         })
         .when('/search', {
             controller: 'queryCtrl',
-            templateUrl: 'partials/queryForm.html',
+            templateUrl: 'views/searchForm.ejs',
         })
         .otherwise({redirectTo:'/search'})
     });

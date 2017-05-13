@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ramblers | signup</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/read-only-main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- show any messages that come back with authentication -->
+		    <% if (message.length > 0) { %>
+		        <div class="alert alert-danger"><%= message %></div>
+		    <% } %>
+
+				<!-- Main -->
+					<section id="main">
+						<header id="header">
+							<span class="avatar"><img  src="images/Velma - Orange.png"alt="" /></span>
+							<h1>ramblers</h1>
+							<p>velma and the cinks</p>
+						</header>
+
+						<hr />
+						<h2>Sign Up</h2>
+						<form method="post" action="/signup" id="signUpForm">
+              <div class="field">
+								<input type="text" name="name" id="name" placeholder="Velma" />
+							</div>
+							<div class="field">
+								<input type="text" name="email" id="email" placeholder="brad@thecinks.com" />
+							</div>
+							<div class="field">
+								<input type="password" name="password" id="password" placeholder="password" />
+							</div>
+							<ul class="actions">
+								<a href="#" class="button" onclick="document.getElementById('signUpForm').submit();">Signup</a>
+							</ul>
+						</form>
+						<hr />
+						<footer>
+							<ul class="icons">
+								<li><a href="/login" class="fa-arrow-right">Login</a></li>
+								<li><a href="/" class="fa-home">Home</a></li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Brad Cink</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
+</html>

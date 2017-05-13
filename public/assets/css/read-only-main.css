@@ -130,7 +130,7 @@
 		font-weight: 400;
 		line-height: 1.65;
 		font-size: 1em;
-		color: #aaa;
+		color: #616f77;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -430,27 +430,27 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: #616f77 !important;
+		color: #ccc !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: #616f77 !important;
+		color: #ccc !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: #616f77 !important;
+		color: #ccc !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: #616f77 !important;
+		color: #ccc !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: #616f77 !important;
+		color: #ccc !important;
 		opacity: 1.0;
 	}
 

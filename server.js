@@ -5,6 +5,7 @@ var mongoose        = require('mongoose');
 var port            = process.env.PORT || 8080;
 var passport        = require('passport');
 var flash           = require('connect-flash');
+var path            = require('path');
 
 var morgan          = require('morgan');
 var cookieParser    = require('cookie-parser');
@@ -21,6 +22,7 @@ var Post            = require('./api/models/postModel');
 // -----------------------------------------------------
 
 // Logging and Parsing
+app.set('views', path.join(__dirname, './public/views'));
 app.use(express.static(__dirname + '/public'));                 // sets the static files location to public
 app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
 app.use(morgan('dev'));                                         // log with Morgan

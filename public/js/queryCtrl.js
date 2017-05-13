@@ -86,7 +86,7 @@ getDistinctActivities();
       };
 
       // Post the queryBody to the /query POST route to retrieve the filtered results
-      $http.post('/query', queryBody)
+      $http.post('/search', queryBody)
           // Store the filtered results in queryResults
           .then(function(queryResults){
               // Pass the filtered results to the Google Map Service and refresh the map

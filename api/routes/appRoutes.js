@@ -28,11 +28,6 @@ module.exports = function(app, passport) {
         });
     });
 
-  app.get('/#/search', isLoggedIn, function(req, res) {
-        res.render('index.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
-    });
 
     // =====================================
   // LOGIN ===============================
@@ -71,6 +66,12 @@ module.exports = function(app, passport) {
       });
   });
 
+  app.get('/user', isLoggedIn, function(req, res) {
+    res.json({
+      user : req.user // get the user out of session and pass to template
+    });
+  });
+
   app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
@@ -100,5 +101,9 @@ module.exports = function(app, passport) {
       // if they aren't redirect them to the home page
         res.redirect('/login');
    }
+
+  function retrieveUserData(req, res, next) {
+
+  }
 
 };

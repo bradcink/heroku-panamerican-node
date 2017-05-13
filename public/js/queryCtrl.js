@@ -22,6 +22,21 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, $loc
   // ----------------------------------------------------------------------------
 
   // Get only the distinct activities from the Post model
+    $http.get('/user').then(function(response){
+      var data = response.data;
+      // id: <%= user._id %>
+      // name: <%= user.local.name %>
+      // email: <%= user.local.email %>
+      // password: <%= user.local.password %>
+      
+      if (data.user.local.name == "Guest") {
+        $('#editButton').remove();
+        $('#deleteButton').remove();
+      }
+
+      }).catch(function(){});
+
+  // Get only the distinct activities from the Post model
   getDistinctActivities = function(){
   $http.get('/distinct').then(function(response){
      var data = response.data;

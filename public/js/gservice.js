@@ -20,7 +20,7 @@
           var minMapZoom = 2;
         }
         else {
-          var selectedLat = 39.50;
+          var selectedLat = 10.500;
           var selectedLong = -90.35;
           var mapZoom = 3;
           var minMapZoom = 3;

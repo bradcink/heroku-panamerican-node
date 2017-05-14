@@ -142,6 +142,7 @@ getDistinctActivities();
         document.getElementById("activity_new").removeAttribute('readonly');
         document.getElementById("comments").removeAttribute('disabled');
         document.getElementById("change_log").removeAttribute('disabled');
+        document.getElementById("activity_new_button").removeAttribute('disabled');
         };
 
   $scope.postEdit = function() {
@@ -213,6 +214,7 @@ getDistinctActivities();
         document.getElementById("activity_new").setAttribute('readonly');
         document.getElementById("comments").setAttribute('disabled');
         document.getElementById("change_log").setAttribute('disabled');
+        document.getElementById("activity_new_button").setAttribute('disabled');
 
         var myNode = document.getElementById("activities");
         while (myNode.firstChild) {

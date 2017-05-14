@@ -42,7 +42,7 @@
                     <label for="accommodation">Accommodation</label>
                     <input type="text" class="form-control" name="accommodation" id="accommodation" value="Cow Hollow Motor Inn" ng-model="formData.accommodation" required readonly>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="accommodation_alt_group">
                     <label for="accommodation_alt">Alt. Accommodation</label>
                     <input type="text" class="form-control" name="accommodation_alt" id="accommodation_alt" value="Airbnb" ng-model="formData.accommodation_alt" required readonly>
                 </div>
@@ -50,8 +50,8 @@
                     <label for="activities">Activities</label>
                     <select class="form-control"  name="activities" multiple id="activities" ng-model="formData.activities" required disabled>
                     </select>
-                  </br>
-                    <div class="input-group">
+                  <id="break"/br>
+                    <div class="input-group" id="add_activity_group">
                       <input type="text" class="form-control" id="activity_new" placeholder="add activity" ng-model="formData.activity_new" readonly>
                       <span class="input-group-btn">
                         <button class="btn btn-info" type="button" id="activity_new_button" style = "height: 38px;" ng-click="addActivity()" disabled>+</button>
@@ -62,7 +62,7 @@
                     <label for="comments">Comments</label>
                     <textarea class="form-control" name="comments" id="comments" value="Home" ng-model="formData.comments" rows="3" required disabled></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="change_log_group">
                     <label for="change_log">Change Log</label>
                     <textarea class="form-control" name="change_log" id="change_log" value="null" ng-model="formData.change_log" rows="2" required disabled></textarea>
                 </div>

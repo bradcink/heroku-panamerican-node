@@ -36,6 +36,10 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, $loc
       if (responseData.user.local.name == "Guest") {
         $('#editButton').remove();
         $('#deleteButton').remove();
+        $('#add_activity_group').remove();
+        $('#change_log_group').remove();
+        $('#accommodation_alt_group').remove();
+        $('#break').remove();        
       }
 
       }).catch(function(){});

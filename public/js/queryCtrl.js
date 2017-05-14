@@ -39,7 +39,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, $loc
         $('#add_activity_group').remove();
         $('#change_log_group').remove();
         $('#accommodation_alt_group').remove();
-        $('#break').remove();        
+        $('#activities_group br').remove();        
       }
 
       }).catch(function(){});

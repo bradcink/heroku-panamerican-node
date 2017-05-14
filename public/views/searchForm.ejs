@@ -1,7 +1,5 @@
         <!-- Panel Body -->
         <div class="panel-body">
-          <pre>form = {{formData | json}}</pre>
-          <pre>master = {{master | json}}</pre>
             <!-- Creates Form -->
             <form name ="queryForm">
                 <div class="form-group">
@@ -11,8 +9,7 @@
                 <button type="submit" class="btn btn-success btn-block" ng-click="queryPosts()">Search</button>
             </form>
             <form name ="viewPost" novalidate>
-              <button ng-click="reset()">RESET</button>
-              <button ng-click="update(formData)">SAVE</button>
+
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                 <div class="form-group">
                     <input type="hidden" class="form-control" name="id" id="id" value="your id" ng-model="formData.id" required readonly>

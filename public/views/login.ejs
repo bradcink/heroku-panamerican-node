@@ -45,8 +45,20 @@
 								<input type="password" name="password" id="password" placeholder="password" />
 							</div>
 							<ul class="actions">
-								<a href="#" class="button" onclick="document.getElementById('signInForm').submit();">Login</a>
+								<a href="#" id="submitButton" class="button" onclick="document.getElementById('signInForm').submit();">Login</a>
 							</ul>
+							<!--
+								Allows submission with enter key
+							-->
+							<script>
+								document.getElementById("signInForm")
+								    .addEventListener("keyup", function(event) {
+								    event.preventDefault();
+								    if (event.keyCode == 13) {
+								        document.getElementById("submitButton").click();
+								    }
+								});
+							</script>
 						</form>
 						<hr />
 						<footer>

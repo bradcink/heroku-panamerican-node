@@ -87,7 +87,8 @@
                     accommodation: post.accommodation,
                     accommodation_alt: post.accommodation_alt,
                     activities: post.activities,
-                    comments: post.comments
+                    comments: post.comments,
+                    change_log: post.change_log
             });
         }
         // location is now an array populated with records in Google Maps format
@@ -139,7 +140,8 @@ var initialize = function(latitude, longitude) {
           accommodation: n.accommodation,
           accommodation_alt: n.accommodation_alt,
           activities: n.activities,
-          comments: n.comments
+          comments: n.comments,
+          change_log: n.change_log
         });
 
         // For each marker created, add a listener that checks for clicks
@@ -158,6 +160,7 @@ var initialize = function(latitude, longitude) {
             googleMapService.clickAccommodationAlt = marker.accommodation_alt;
             googleMapService.clickActivities = marker.activities;
             googleMapService.clickComments = marker.comments;
+            googleMapService.clickChangeLog = marker.change_log;
             $rootScope.$broadcast("clicked");
         });
 

@@ -14,6 +14,7 @@ var PlanningSchema = new Schema({
     accommodation_alt: {type: [String]},
     activities: {type: [String]},
     comments: {type: String},
+    change_log: {type: String},
     //created_at: {type: Date, default: Date.now},
     //updated_at: {type: Date, default: Date.now}
 });

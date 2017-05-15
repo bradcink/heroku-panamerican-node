@@ -1,4 +1,14 @@
         <!-- Panel Body -->
+        <style>
+          .ta-editor {
+            min-height: 300px;
+            height: auto;
+            overflow: auto;
+            font-family: inherit;
+            font-size: 100%;
+            margin: 20px 0;
+          }
+      </style>
         <div class="panel-body">
             <!-- Creates Form -->
             <form name ="queryForm">
@@ -6,7 +16,7 @@
                     <input type="text" class="form-control" id="keyword" placeholder="keyword" ng-model="formData.keyword">
                 </div>
                 <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
-                <button type="submit" class="btn btn-success btn-block" ng-click="queryPosts()">Search</button>
+                <button type="submit" class="btn btn-success btn-block" ng-click="queryPosts()">search</button>
             </form>
             <form name ="viewPost" novalidate>
 
@@ -15,39 +25,39 @@
                     <input type="hidden" class="form-control" name="id" id="id" value="your id" ng-model="formData.id" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="city">City</label>
+                    <label for="city">city</label>
                     <input type="text" class="form-control" name="city" id="city" value="San Francisco" ng-model="formData.city" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="province">State / Province</label>
+                    <label for="province">state / province</label>
                     <input type="text" class="form-control" name="province" id="province" value="California" ng-model="formData.province" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="country">Country</label>
+                    <label for="country">country</label>
                     <input type="text" class="form-control" name="country" id="country" value="United States" ng-model="formData.country" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="latitude">Latitude</label>
+                    <label for="latitude">latitude</label>
                     <input type="text" class="form-control" name="latitude" id="latitude" value="39.500" ng-model="formData.latitude" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="longitude">Longitude</label>
+                    <label for="longitude">longitude</label>
                     <input type="text" class="form-control" name="longitude" id="longitude" value="-98.350" ng-model="formData.longitude" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="region">Region</label>
+                    <label for="region">region</label>
                     <input type="text" class="form-control" name="region" id="region" value="North America" ng-model="formData.region" required readonly>
                 </div>
                 <div class="form-group">
-                    <label for="accommodation">Accommodation</label>
+                    <label for="accommodation">accommodation</label>
                     <input type="text" class="form-control" name="accommodation" id="accommodation" value="Cow Hollow Motor Inn" ng-model="formData.accommodation" required readonly>
                 </div>
                 <div class="form-group" id="accommodation_alt_group">
-                    <label for="accommodation_alt">Alt. Accommodation</label>
+                    <label for="accommodation_alt">alt. accommodation</label>
                     <input type="text" class="form-control" name="accommodation_alt" id="accommodation_alt" value="Airbnb" ng-model="formData.accommodation_alt" required readonly>
                 </div>
                 <div class="form-group" id="activities_group">
-                    <label for="activities">Activities</label>
+                    <label for="activities">activities</label>
                     <select class="form-control"  name="activities" multiple id="activities" ng-model="formData.activities" required disabled>
                     </select>
                   </br>
@@ -58,18 +68,15 @@
                       </span>
                     </div><!-- /input-group -->
                 </div>
-                <div class="form-group">
-                    <label for="comments">Comments</label>
-                    <textarea class="form-control" name="comments" id="comments" value="Home" ng-model="formData.comments" rows="3" required disabled></textarea>
-                </div>
+                <div id="text-angular"></div>
                 <div class="form-group" id="change_log_group">
-                    <label for="change_log">Change Log</label>
+                    <label for="change_log">change log</label>
                     <textarea class="form-control" name="change_log" id="change_log" value="null" ng-model="formData.change_log" rows="2" required disabled></textarea>
                 </div>
                 <div id="buttonDiv">
-                  <button type="submit" id = "editButton" style="visibility: visible" class="btn btn-warning btn-block" ng-click="prepareToEdit(formData)">Edit</button>
+                  <button type="submit" id = "editButton" style="visibility: visible" class="btn btn-warning btn-block" ng-click="prepareToEdit(formData)">edit</button>
                 </div>
               </br>
-                <button type="submit" id = "deleteButton" style="visibility: visible;" class="btn btn-danger btn-block" ng-click="deletePost()">Delete</button>
+                <button type="submit" id = "deleteButton" style="visibility: visible;" class="btn btn-danger btn-block" ng-click="deletePost()">delete</button>
             </form>
         </div>

@@ -1,5 +1,5 @@
 // Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
-var queryCtrl = angular.module('queryCtrl', ['geolocation', 'gservice']);
+var queryCtrl = angular.module('queryCtrl', ['geolocation', 'gservice', 'textAngular']);
 queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, $location, $compile, geolocation, gservice){
 
   // Initializes Variables
@@ -39,7 +39,15 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, $loc
         $('#add_activity_group').remove();
         $('#change_log_group').remove();
         $('#accommodation_alt_group').remove();
-        $('#activities_group br').remove();        
+        $('#activities_group br').remove();
+        var taDisabled = '<text-angular name="comments" id="comments" value="Home" ng-model="formData.comments" ta-disabled=true ta-toolbar="[]"></text-angular>';
+        var taDisabledCompiled = $compile(taDisabled)($scope);
+        angular.element(document.getElementById('text-angular')).append(taDisabledCompiled);
+      }
+      else {
+        var taEnabled = '<text-angular name="comments" id="comments" value="Home" ng-model="formData.comments"></text-angular>';
+        var taEnabledCompiled = $compile(taEnabled)($scope);
+        angular.element(document.getElementById('text-angular')).append(taEnabledCompiled);
       }
 
       }).catch(function(){});
@@ -144,7 +152,6 @@ getDistinctActivities();
         document.getElementById("accommodation_alt").removeAttribute('readonly');
         document.getElementById("activities").disabled=false;
         document.getElementById("activity_new").removeAttribute('readonly');
-        document.getElementById("comments").removeAttribute('disabled');
         document.getElementById("change_log").removeAttribute('disabled');
         document.getElementById("activity_new_button").removeAttribute('disabled');
         };
@@ -216,7 +223,6 @@ getDistinctActivities();
         document.getElementById("accommodation_alt").setAttribute('readonly');
         document.getElementById("activities").disabled=true;
         document.getElementById("activity_new").setAttribute('readonly');
-        document.getElementById("comments").setAttribute('disabled');
         document.getElementById("change_log").setAttribute('disabled');
         document.getElementById("activity_new_button").setAttribute('disabled');
 
@@ -279,5 +285,18 @@ getDistinctActivities();
     /*alert(str);*/
 
     return str;
-}
+    }
+    function getAllElementsWithAttribute(attribute){
+      var matchingElements = [];
+      var allElements = document.getElementsByTagName('*');
+      for (var i = 0, n = allElements.length; i < n; i++)
+      {
+        if (allElements[i].getAttribute(attribute) !== null)
+        {
+          // Element exists with attribute. Add to array.
+          matchingElements.push(allElements[i]);
+        }
+      }
+      return matchingElements;
+    }
 });
